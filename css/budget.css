@@ -1,0 +1,481 @@
+/* Style for the shopping cart */
+#cart {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(50%, -10%);
+  background-color: #fefefe;
+  display: none;
+  width: 25%;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  border: 0.1rem solid #ccc; /* Add a subtle border for separation */
+  padding: 1rem;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+  z-index: 9998;
+
+}
+
+#cart button {
+  border: var(--subtle-border); /* Use the variable for subtle border */
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+/* Add a backdrop overlay style */
+#cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: none;
+  z-index: 9998;
+}
+
+/* Style for customization options labels */
+#customization-options label {
+  margin: 1rem 0 0.2rem 0;
+  font-weight: bold;
+  align-items: flex-start; /* Align to the left on desktop */
+}
+
+/* Style for customization options inputs and selects */
+#customization-options input,
+#customization-options select {
+  width: 21vw;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  margin: 0.2rem 0 0.5rem 0;
+  text-align: center;
+  border: 0.1rem solid #ccc; /* Add a subtle border for separation */
+}
+
+/* Make label and input be flex column and stack on top of each other */
+#customization-options label,
+#customization-options input,
+#customization-options select {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+/* Style for the product h5 tag right position */
+.h5budget {
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Style for the product list container */
+#product-list {
+  text-align: left; /* Align to the left on desktop */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+/* Style for each product label within the product list */
+#product-list label {
+  display: flex;
+  flex-direction: row;
+  flex: 1; /* Make labels take equal space */
+  text-align: left; /* Align to the left on desktop */
+  align-items: center;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+#product-list label img {
+  max-width: 50%; /* Ensure the image doesn't exceed its container */
+  margin: 0.2rem 0.5rem 0.2rem 0.1rem;
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Style for the basket container */
+#basket {
+  width: 100%; /* Set the width to 50% */
+  margin: 1rem auto; /* Center the container horizontally */
+  box-shadow: var(--box-shadow);
+  padding: 1rem 0 1rem 2rem;
+  background-color: #fff;
+  display: none; /* Initially hide the basket */
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align to the left on desktop */
+  font-size: 1.4rem;
+  overflow: hidden;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+/* Style for each item in the basket list */
+#basket-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align to the left on desktop */
+  gap: 1rem;
+}
+
+/* Style for each item in the basket list */
+#basket-list li {
+  margin-bottom: 0; /* Set margin-bottom to 0 to eliminate spacing between list items */
+  box-sizing: border-box;
+  border: 0.1rem solid #000000;
+  padding: 0.2rem;
+  font-size: 0.8rem;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+#basket-list li img {
+  scale: 70%;
+}
+
+/* Style for the form within the basket */
+#basket-form {
+  text-align: left; /* Align to the left on desktop */
+}
+
+/* Style for product-info */
+#product-info {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: left; /* Align to the left on desktop */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for buttons */
+button {
+  background-color: #fafafa;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+/* Style for button hover state */
+button:hover {
+  background-color: #00000056;
+}
+
+/* General Styles */
+
+.aboutText {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.sectionDados {
+  align-items: flex-start; /* Align to the left on desktop */
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  gap: 1rem;
+  justify-content: flex-start; /* Align to the left on desktop */
+  line-height: 2rem;
+}
+
+.sectionDetalhes {
+  color: #000000;
+  align-items: flex-start; /* Align to the left on desktop */
+  display: none;
+  font-size: 1rem;
+  grid-gap: 5px;
+  justify-content: flex-start; /* Align to the left on desktop */
+  line-height: 2rem;
+  list-style-type: none;
+  margin-bottom: 1%;
+}
+
+/* Box Styles */
+
+.box h2 {
+  text-align: left; /* Align to the left on desktop */
+}
+
+.comentarioHolder {
+  line-height: 2rem;
+  text-align: left; /* Align to the left on desktop */
+}
+
+.comentarioHolder textarea {
+  margin: 1rem auto; /* Center the textarea horizontally */
+  width: 72vw; /* Set the width area */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  font-size: 1.4rem;
+}
+
+.formularioHolder {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin-top: 5%;
+  text-align: left; /* Align to the left on desktop */
+}
+
+/* Input Styles */
+
+.input {
+  background-color: var(--primary-color);
+  color: rgb(0, 0, 0);
+  box-shadow: var(--box-shadow);
+  font-size: 1.4rem;
+  padding: 0.25rem 0.5rem;
+  min-width: 15%;
+  cursor: pointer;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+.inputDetalhes {
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  min-width: 10vw;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+.infoInvalid {
+    border: 0.1rem solid red;
+}
+/* Button Styles */
+
+.mainButton {
+  align-items: flex-start; /* Align to the left on desktop */
+  background-color:  #7D6AA3;
+  color: white;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  justify-content: flex-start; /* Align to the left on desktop */
+  padding: 1%;
+  text-align: left; /* Align to the left on desktop */
+  width: auto;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+.mainButton a {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1rem;
+  text-decoration: none;
+  text-shadow: 2px 2px 3px rgb(80, 80, 80);
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+/* Instruction Board Styles */
+#instructions{
+  max-width: 40%;
+  padding: 1rem;
+  background: #7D6AA3;
+  color: white;  
+  box-shadow: var(--box-shadow);
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+#instructions ul{
+  display: block;
+  text-transform: none;
+  padding: 1rem;
+}
+#instructions li{
+  list-style-type: disc;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+
+}
+#instructions ol{
+  margin-left: 3rem;
+}
+#instructions ol li{
+  list-style-type: decimal;
+}
+
+/* Message PoupUp Styles */
+
+.popup {
+  position: fixed;
+  border: 2px solid black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 9999;
+}
+
+
+/* Responsive Styles */
+
+@media screen and (max-width: 767px) {
+  /* Responsive styling for cart options */
+  #cart {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem 0.5rem 0.8rem 0.5rem;
+    width: 85vw;
+    justify-content: center;
+    text-align: center;
+    /* Apply scroll only height adjustment */
+    scroll-margin-top: 3rem;
+  }
+
+  /* Style for the customization options within the cart */
+  #customization-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Style for customization options labels */
+  #customization-options label {
+    margin-bottom: 0.3rem;
+    font-weight: bold; /* Make labels bold for emphasis */
+    display: block; /* Change display to block to stack labels */
+  }
+
+  /* Style for customization options inputs and selects */
+  #customization-options input,
+  #customization-options select {
+    width: 65vw;
+    min-width: 65vw;
+    box-sizing: border-box;
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    border: 0.2rem solid #ccc; /* Add a subtle border for separation */
+  }
+
+  /* Make label and input be flex column and stack on top of each other */
+  #customization-options label,
+  #customization-options input,
+  #customization-options select {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Style for the product h5 tag right position */
+  .h5budget {
+    margin-top: 0.5rem;
+    color: #3f84c5;
+    font-weight: bold;
+  }
+
+  /* Style for buttons */
+  button {
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0.5rem 0.1rem 0.1rem 0.1rem;
+    cursor: pointer;
+  }
+
+  /* Responsive styling for basket options */
+  #basket-list li {
+    flex-basis: calc(100% - 10px);
+  }
+
+  #product-list {
+    width: 70%;
+  }
+
+  #product-list label,
+  #basket-list li {
+    flex-basis: 100%;
+    margin: 0 1rem 1rem 0;
+  }
+
+  /* Responsive styling basic layout of form content */
+  .sectionOpcao {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .sectionDados {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  .inputx {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    width: 7rem;
+  }
+
+  .imageHolderForm {
+    display: none;
+  }
+
+  .formularioHolder span {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    margin-bottom: 2%;
+    margin-top: -15%;
+  }
+
+  .formularioHolder h3 {
+    font-size: 1.1rem;
+  }
+
+  .mainButton {
+    font-size: 1.2rem;
+    width: auto;
+  }
+
+  .comentarioHolder textarea {
+    margin-left: 0;
+    width: 99%;
+  }
+
+  /*  Responsive styling Instruction Board  */
+  #instructions{
+    max-width: 100%;
+    background: #7D6AA3;
+    color: white;
+  }
+
+  #instructions li{
+    list-style-type: disc;
+    font-size: 1rem;
+  }
+
+}

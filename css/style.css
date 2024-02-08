@@ -1,0 +1,510 @@
+/* Define CSS variables for common values */
+:root {
+  --primary-color: white;
+  --box-shadow: 4px 4px 5px 0px rgba(94, 94, 94, 1);
+  --subtle-border: 0.1rem solid #f5f2f2; /* Define a variable for subtle border */
+  --border-radius: 1rem; /* Adjust the value for border-radius */
+}
+
+/* Reset Styles */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
+}
+
+/* Body Styles */
+body {
+  font-family: Inter, sans-serif;
+  background-color: #fafafa;
+}
+
+/* Logo Styles */
+.logo-link {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.imglogo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Styles */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 110;
+  background-color: white;
+  padding: 0 calc(8px + 1.5625vw) 0 calc(8px + 1.5625vw);
+  border-bottom: 0.1rem solid #ddd; /* Adjust the color and thickness as needed */
+}
+
+/* Menu Styles */
+.main-menu,
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.main-menu,
+li {
+  list-style: none;
+  font-size: 1.4rem;
+}
+
+.main-menu,
+a {
+  text-decoration: none;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+.menu-item {
+  padding: 0.8rem 2rem 0 0;
+}
+
+#menu-item1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#mobile-menu {
+  display: none;
+  width: 100%;
+}
+
+/* Link Styles */
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: rgb(155, 155, 155);
+}
+
+/* Active Link Style */
+.menu a.active {
+  color: #696969; /* Adjust the active link */
+  position: relative;
+}
+
+.menu a.active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #696969; /* Adjust the color of the underline */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 100;
+  background-color: white;
+  text-align: center;
+  padding: 0 calc(8px + 1.5625vw) 0 calc(8px + 1.5625vw);
+  border-top: 0.1rem solid #ddd; /* Adjust the color and thickness as needed */
+}
+
+/* Socials Styles */
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.socials li {
+  font-size: 1rem;
+  padding-right: 3rem;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Main Content Styles */
+main {
+  position: relative;
+  z-index: 1;
+  margin: 0 calc(8px + 1.5625vw) 0 calc(8px + 1.5625vw);
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+/* Grid Layout Styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
+  gap: calc(8px + 1.5625vw);
+}
+
+.grid-item {
+  transition: background-color 0.3s ease-in-out;
+  -webkit-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  -moz-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+/* Animation for color change on hover */
+@keyframes colorChange {
+  from {
+    color: #fafafa; /* Initial color */
+  }
+  to {
+    color: black; /* New color on hover */
+  }
+}
+
+/* Hover effect */
+.grid-item a:hover {
+  animation: colorChange 0.3s ease-in-out;
+}
+
+/* Nested Grid Styles */
+.inner-grid {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.right-box {
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 50% - 50% Split Styles */
+.inner-grid-50 {
+  display: flex;
+}
+
+.left-box-50,
+.right-box-50 {
+  flex: 1;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.left-box-50 img,
+.right-box-50 img {
+  -webkit-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  -moz-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+}
+/* 33% - 33% - 33% Split Styles */
+.inner-grid-33 {
+  display: flex;
+  text-align: center;
+  gap: calc(8px + 1.5625vw);
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+.left-box-33,
+.center-box-33,
+.right-box-33 {
+  flex: 1;
+  box-sizing: border-box;
+  -webkit-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  -moz-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(
+    --border-radius
+  ); /* Apply border-radius for rounded edges */
+}
+
+/* 15% - 50% - 30% Split Styles */
+.inner-grid-15 {
+  display: grid;
+  grid-template-columns: 15% 60% 30%;
+}
+
+/* flexproducts */
+.flex-container {
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+/* Product item container styles */
+.flex-container div:hover {
+  transform: scale(
+    1.1
+  ); /* Adjust the scale value for the desired zoom effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the transform property */
+}
+
+.item {
+  font-size: 24px;
+  width: 100px;
+  height: 50%;
+  text-align: center;
+  line-height: 50px;
+  min-width: 100px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+.pNamePrdt {
+  text-align: center;
+}
+
+/* Css for the about.html page is only applied there */
+.container p {
+  margin: auto; /* Set margin for p tag in the container */
+}
+
+/* Css for the filler space to fix the fixed footer covering bottom content */
+.filler {
+  margin-top: calc(16px + 3.125vw);
+}
+
+.products-mobile {
+  display: none;
+}
+
+/* CSS for the summary on privacy policy */
+#summary-holder{
+  background-color: #f5f5f5;
+  border: 1px solid lightgray;
+  position: fixed;
+  max-width: 14%;
+  min-width: 14%;
+
+}
+#summary-holder h3{
+  text-align: center;
+  padding: 0.5rem;
+}
+details {
+  display: block;
+  margin-bottom: 10px;
+}
+details summary{
+  background-color: #f0f0f0;
+}
+summary details div{
+  transition: background-color 0.3s ease;
+}
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+details div {
+  padding: 0.5em;
+  cursor: pointer;
+}
+details div:nth-child(odd) {
+  background-color: #e0e0e0; /* Set the background color for odd elements */
+}
+summary:hover,  details div:hover {
+  background-color: #c0c0c0; /* Set a darker background color on hover */
+}
+
+details[open] summary {
+  border: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}
+
+.flash-effect {
+  background-color: #c0c0c0; /* Adjust the background color as needed */
+  transition: background-color 0.5s ease; /* Adjust the transition duration as needed */
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 1rem;
+  }
+
+  /* Responsive styling for text alignment */
+
+  .socials {
+    flex-direction: column;
+  }
+
+  /* Socials Styles */
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+  }
+
+  .socials li {
+    font-size: 0.7rem;
+    padding: 0.1rem 0 0.1rem 0;
+  }
+
+  .socials a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .socials img {
+    display: none;
+  }
+
+  /* Mobile Menu Styles */
+  .mobile-menu {
+    display: none; /* Hide the mobile menu by default */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobile-menu li {
+    padding: 0.5rem 0; /* Adjust padding for mobile menu items */
+  }
+
+  .header-link {
+    display: none; /* Initially hide header links on smaller screens */
+  }
+
+  #menu-principal {
+    display: none; /* Hide the desktop menu on smaller screens */
+  }
+
+  #mobile-menu {
+    display: flex; /* Show the mobile menu on smaller screens */
+    padding: 0.5rem 0 0.5rem 0;
+  }
+
+  /* Style to show only the word "Menu" */
+  #mobile-menu:empty::before {
+    content: "Menu";
+  }
+
+  .header-link {
+    display: block; /* Display header links on smaller screens */
+  }
+
+  /* Initially hide header links on smaller screens when mobile menu is closed */
+  #mobile-menu:not(.mobile-menu) .header-link {
+    display: none;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Set a single column layout on smaller screens */
+  }
+
+  /* p for mobile in grid-container */
+  .grid-container {
+    padding: 0 1.2rem 0 1rem;
+  }
+
+  .inner-grid {
+    grid-template-columns: 100%; /* Set full width for inner grid on smaller screens */
+  }
+
+  .right-box {
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px; /* Add margin between boxes on smaller screens */
+  }
+
+  .right-box img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .left-box {
+    text-align: left;
+    padding: 0 0.2rem 0 0.2rem;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .flex-container > div {
+    width: 45%; /* Adjust the width of each item as needed */
+    margin-bottom: 20px;
+  }
+
+  .inner-grid-50 {
+    flex-direction: column;
+  }
+
+  .left-box-50,
+  .right-box-50 {
+    width: 100%; /* Make both boxes full width on smaller screens */
+  }
+
+  .right-box-50 {
+    margin-top: 10px; /* Add some space between the boxes on smaller screens */
+  }
+
+  /* Adjust image sizes to fit the screen */
+  .left-box-50 img,
+  .right-box-50 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* 33% - 33% - 33% Split Styles */
+  .inner-grid-33 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Css for the filler space to fix the fixed footer covering bottom content */
+.filler {
+  margin-top: calc(32px + 6.250vw);
+}
+
+.products-desktop {
+  display: none;
+}
+
+.products-mobile {
+  display: flex;
+}
+
+.brNoneMobile{
+  display: none;
+}
+  /* CSS for the summary on privacy policy */
+.inner-grid-15{
+  display: grid;
+  grid-template-columns: 100%;
+}
+.summary{
+  display: none;
+}
+.right-box{
+  display: none;
+}
+}

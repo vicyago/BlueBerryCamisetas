@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata for character set, viewport, description, keywords, and author -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Web Site T-shirt Conffection and Personalization"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Victor Yago Cury" />
+
+    <!-- External style sheets -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/budget.css" />
+
+    <!-- Document title -->
+    <title>Orçamento</title>
+  </head>
+  <body>
+    <!-- Header section with navigation -->
+    <header>
+      <nav>
+        <!-- Mobile menu -->
+        <ul id="mobile-menu" class="menu">
+          <li><span id="menu-text">Menu</span></li>
+          <li class="header-link">
+            <a href="../index.html" class="logo-link"
+              ><img class="imglogo" src="../img/Logo.webp" alt="BlueBerryLogo"
+            /></a>
+          </li>
+          <li class="header-link"><a href="../html/sobre.html">Sobre</a></li>
+          <li class="header-link">
+            <a href="../html/produtos.html">Produtos</a>
+          </li>
+          <li class="header-link">
+            <a href="../html/orcamento.html">Orçamento</a>
+          </li>
+          <li class="header-link">
+            <a href="../html/contato.html">Contato</a>
+          </li>
+        </ul>
+        <!-- Main menu -->
+        <ul id="menu-principal" class="menu">
+          <li id="menu-item1" class="menu-item">
+            <a href="../index.html" class="logo-link"
+              ><img class="imglogo" src="../img/Logo.webp" alt="BlueBerryLogo"
+            /></a>
+          </li>
+          <li class="menu-item"><a href="../html/sobre.html">Sobre</a></li>
+          <li class="menu-item">
+            <a href="../html/produtos.html">Produtos</a>
+          </li>
+          <li class="menu-item"><a href="../html/orcamento.html">Orçamento</a></li>
+          <li class="menu-item"><a href="../html/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main content section -->
+    <main>
+      <!-- Section for product selection -->
+      <div class="box">
+        <br />
+        <br />
+        <h1>Orçamento</h1>
+        <br />
+        <br />
+        <div id="instructions">
+          <ul>
+            <li style="list-style-type: none"><h3>Instruções</h3></li>
+            <li>Adicione os produtos, um por vez, na sacola</li>
+            <li>Para adicionar um produto na sacola:
+              <ol>
+                <li>Clique no botão correspondente ao produto que gostaria de adicionar.</li>
+                <li>Escolha as opções de customização (tamanho, cor, etc..).</li>
+                <li>Salve o produto na sacola</li>
+              </ol>
+            </li>
+            <li>Submeta os produtos escolhidos para orçamento clicando no botão <strong>'Submeter Orçamento!'</strong></li>
+            <li><strong>Atenção!</strong> O pedido de orçamento não equivale a realização do pedido final. Ao recebermos
+              o pedido, entraremos em contato para confirmar detalhes e valores.</li>
+          </ul>
+          <h3>Caso prefirir, entre em contato conosco.</h3>
+          <br />
+          <p>
+            Orçamentos podem ser solicitados pelo e-mail:
+            <a href="mailto:marildablueberry@uol.com.br" target="_blank">marildablueberry@uol.com.br</a>
+            ou clicando
+            <a href="./html/orcamento.html" target="_blank">
+              Aqui!</a>
+          </p>
+        </div>
+        <br>
+        <br>
+
+        <h2>Produtos</h2>
+        <br />
+        <br />
+      </div>
+      <!-- Add a backdrop overlay element -->
+      <div id="cart-overlay"></div>
+      <!-- Shopping cart section -->
+      <div id="cart">
+        <h2>Customização do item</h2>
+        <div id="customization-options"></div>
+        <h5 class="h5budget">* O Mínimo são de 30 peças por pedido.</h5>
+
+        <button>Salvar</button>
+        <button>Fechar</button>
+      </div>
+
+      <!-- Product list with checkboxes -->
+      <div id="product-list">
+        <label class="input">
+          <input
+            name="camiseta"
+            type="checkbox"
+          />
+          <img src="../img/camiseta.webp" alt="camiseta" /> Camiseta
+        </label>
+        <label class="input">
+          <input
+            name="polo"
+            type="checkbox"
+          />
+          <img src="../img/polo.webp" alt="polo" /> Polo
+        </label>
+        <label class="input">
+          <input
+            name="agasalho"
+            type="checkbox"
+          />
+          <img src="../img/agasalho.webp" alt="Agasalho" /> Agasalho
+        </label>
+        <label class="input">
+          <input
+            name="abada"
+            type="checkbox"
+          />
+          <img src="../img/abada.webp" alt="Abadá" /> Abadá
+        </label>
+        <label class="input">
+          <input
+            name="ecobag"
+            type="checkbox"
+          />
+          <img src="../img/ecobag.webp" alt="Ecobag" /> Ecobag
+        </label>
+        <label class="input">
+          <input
+            name="mascara"
+            type="checkbox"
+          />
+          <img src="../img/mascara.webp" alt="Máscara" /> Máscara
+        </label>
+      </div>
+      <br />
+      <!-- Basket section to display selected items -->
+
+      <div id="basket-holder">
+        <div id="product-info" style="display: none"></div>
+        <div id="basket">
+          <h3 style="margin-top: 0.5rem">Produtos</h3>
+          <img
+            src="../img/carrinho.webp"
+            alt="Carrinho"
+            style="margin: 0 0 1rem 1rem"
+          />
+          <ul id="basket-list"></ul>
+        </div>
+      </div>
+      <!-- Form for submitting the order -->
+      <div id="basket-form">
+        <!-- User Information Section -->
+        <section class="boxes">
+          <div class="box">
+            <br />
+            <h2>Seus Dados</h2>
+            <br />
+            <h4 style="color: #3f84c5">
+              Campos com * são de preenchimento obrigatório!
+            </h4>
+            <br />
+            <br />
+            <form class="" id="userInfoForm" novalidate>
+
+            <div class="sectionDados">
+              <!-- User Details Fields -->
+              <!-- Repeat similar fields for other user details -->
+              <div class="dadosBasis">
+                <div><label class="#">◼ Seu Nome:*</label></div>
+                <div>
+                  <input
+                    name="Nome"
+                    class="info input"
+                    id="Nome"
+                    size="18"
+                    maxlength="30"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="dadosBasis">
+                <div>
+                  <label class="#">◼ E-mail:*</label>
+                </div>
+                <div>
+                  <input
+                    name="Email"
+                    class="info input"
+                    id="Email"
+                    size="18"
+                    maxlength="30"
+                    type="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="dadosBasis">
+                <div>
+                  <label class="#">◼ Celular:</label>
+                </div>
+                <div>
+                  <input
+                    name="dddCel"
+                    class="info input"
+                    id="DDD"
+                    size="1"
+                    maxlength="3"
+                    type="text"
+                  />
+                  <input
+                    name="Telefone"
+                    class="info input"
+                    id="Telefone"
+                    size="10"
+                    maxlength="12"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="dadosBasis">
+                <div>
+                  <label class="#">◼ Telefone:</label>
+                </div>
+                <div>
+                  <input
+                    name="dddTelefone"
+                    class="info input"
+                    id="DDD2"
+                    size="1"
+                    maxlength="3"
+                    type="text"
+                  />
+                  <input
+                    name="Telefone2"
+                    class="info input"
+                    id="Telefone2"
+                    size="10"
+                    maxlength="12"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="formularioHolder">
+              <div class="comentarioHolder">
+                <h3>Observações e Dúvidas:</h3>
+                <!-- Textarea for additional comments -->
+                <textarea
+                  name="Comentario"
+                  cols="50"
+                  rows="5"
+                  class="inputDetalhes"
+                  id="Comentario"
+                  style="resize: vertical"
+                  maxlength="1000"
+                ></textarea>
+                <!-- Hidden input for form title -->
+                <label class="#">
+                  <input
+                    name="tituloMensagem"
+                    id="tituloMensagem"
+                    value="Formulário de Orçamento"
+                    type="hidden"
+                  />
+                  &nbsp;
+                </label>
+              </div>
+            </div>
+            </form>
+
+          </div>
+          <!-- Submit button for the form -->
+          <button class="mainButton" id="mainButton" type="button">
+            Submeter Orçamento
+          </button>
+
+        </section>        
+      </div>
+    </main>
+
+    <br />
+    <br />
+
+    <div class="filler"></div>
+    <div class="popup" id="popup">
+        <p id="popupMessage"></p>
+        <button>Fechar</button>
+    </div>
+    <!-- Footer section -->
+    <footer id="footer">
+      <!-- Social links and contact information -->
+      <ul class="socials">
+        <li>
+          <img src="../img/logoImg.webp" alt="BlueBerryCamisetas" />
+        </li>
+        <li>© 2024 BlueBerryCamisetas</li>
+        <li>
+          <a href="mailto:marildablueberry@uol.com.br" target="_blank"
+            >marildablueberry@uol.com.br</a
+          >
+        </li>
+        <li>(19) 3231-2968</li>
+        <li>Atendimento: 09:00 - 17:00</li>
+      </ul>
+    </footer>
+
+    <!-- External budget sheet -->
+    <script src="../js/budget.js"></script>
+    <!-- Title of the web page -->
+    <!-- JavaScript files -->
+    <script src="../js/script.js"></script>
+  </body>
+</html>

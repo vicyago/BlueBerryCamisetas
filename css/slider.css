@@ -1,0 +1,87 @@
+/* Styling for the container of the slider */
+.slider-container {
+  height: 100%; /* Set the height to 100% of the parent container (adjust as needed) */
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  -webkit-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1); /* Add a subtle shadow using vendor prefixes */
+  -moz-box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+  box-shadow: 4px 4px 5px 0 rgba(94, 94, 94, 1);
+}
+
+/* Styling for the slider itself */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition effect for sliding */
+}
+
+/* Styling for individual slides within the slider */
+.slide {
+  min-width: 100%; /* Each slide takes at least 100% of the container width */
+  box-sizing: border-box;
+}
+
+/* Styling for images within each slide */
+.slide img {
+  max-height: 100%; /* Set the maximum height of the image within the slide */
+  object-fit: fill; /* Adjust how the image fits within the container */
+  width: 100%; /* Ensure the image takes up the entire width of the slide */
+  display: block;
+  margin: auto;
+}
+
+/* Styling for navigation buttons */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(
+    -10vh
+  ); /* Position buttons vertically at the center with an offset (adjust as needed) */
+  font-size: 3rem; /* Set the font size for navigation buttons */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Styling for the previous button */
+.prev {
+  left: 1rem;
+}
+
+/* Styling for the next button */
+.next {
+  right: 1rem;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 767px) {
+  .slider-container {
+    height: 25vh; /* Adjust the height for mobile screens */
+    -webkit-box-shadow: none; /* Remove box shadow for better mobile display */
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .slide img {
+    max-height: 25vh; /* Adjust the maximum height of images for mobile screens */
+  }
+
+  button {
+    font-size: 2rem; /* Adjust the font size for smaller screens */
+    transform: translateY(
+      -5vh
+    ); /* Adjust the vertical position of buttons for smaller screens */
+  }
+
+  /* Styling for the previous button */
+.prev {
+  left: 0.2rem;
+}
+
+/* Styling for the next button */
+.next {
+  right: 0.2rem;
+}
+}
